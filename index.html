@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RK Opening Trainer</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/chessground@8.0.0/dist/chessground.min.css">
+  <script src="https://unpkg.com/chessground@8.0.0/dist/chessground.min.js"></script>
+</head>
+
+<body>
+
+<div id="topbar">
+  <h1>RK Trainer</h1>
+
+  <div id="menu">
+    <select id="modeSelect">
+      <option value="repertoire">Repertoire Training</option>
+      <option value="survival">Survival</option>
+      <option value="timed">Timed</option>
+      <option value="chapter">Chapter</option>
+      <option value="weakness">Weakness</option>
+      <option value="flashcards">Flashcards</option>
+    </select>
+
+    <button onclick="setColor('white')">White</button>
+    <button onclick="setColor('black')">Black</button>
+    <button onclick="setColor('random')">Random</button>
+
+    <input type="file" id="jsonInput" />
+  </div>
+</div>
+
+<div id="layout">
+
+  <div id="board"></div>
+
+  <div id="panel">
+
+    <div id="status">Load a JSON to start</div>
+
+    <div class="btnRow">
+      <button onclick="makeHint()">Hint</button>
+      <button onclick="showSolution()">Show Solution</button>
+      <button onclick="showComment()">Show Comment</button>
+    </div>
+
+    <div class="btnRow">
+      <button onclick="restart()">Restart</button>
+      <button onclick="restartLine()">Restart Line</button>
+      <button onclick="flip()">Flip</button>
+      <button onclick="leave()">Leave</button>
+      <button onclick="summary()">Summary</button>
+    </div>
+
+    <pre id="output"></pre>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
